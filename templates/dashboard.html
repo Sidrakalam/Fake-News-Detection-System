@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo">📰 Fake News Detector</div>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/predict-page">News Analyzer</a></li>
+    </ul>
+</nav>
+<div class="dashboard-container">
+
+    <h1>📊 Model Performance Dashboard</h1>
+
+    <!-- MODEL METRICS -->
+    <div class="card-row">
+
+        <div class="dash-card">
+            <h3>Model Accuracy</h3>
+            <p>{{ (metrics.accuracy * 100) | round(2) }}%</p>
+        </div>
+
+        <div class="dash-card">
+            <h3>Total Dataset</h3>
+            <p>{{ metrics.total_data }}</p>
+        </div>
+
+        <div class="dash-card">
+            <h3>Fake (Dataset)</h3>
+            <p>{{ metrics.fake_count }}</p>
+        </div>
+
+        <div class="dash-card">
+            <h3>Real (Dataset)</h3>
+            <p>{{ metrics.real_count }}</p>
+        </div>
+
+    </div>
+
+    <!-- PREDICTION STATS -->
+    <h2>Prediction Statistics</h2>
+
+    <div class="card-row">
+
+        <div class="dash-card">
+            <h3>Total Predictions</h3>
+            <p>{{ total_predictions }}</p>
+        </div>
+
+        <div class="dash-card">
+            <h3>Fake Detected</h3>
+            <p>{{ fake_predictions }}</p>
+        </div>
+
+        <div class="dash-card">
+            <h3>Real Detected</h3>
+            <p>{{ real_predictions }}</p>
+        </div>
+
+    </div>
+
+    <!-- RECENT PREDICTIONS -->
+    <h2>Recent 5 Predictions</h2>
+
+    <table class="history-table">
+        <tr>
+            <th>Date</th>
+            <th>News</th>
+            <th>Prediction</th>
+            <th>Confidence</th>
+        </tr>
+
+        {% for row in history %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1][:60] }}...</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}%</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <br><br>
+    <a href="/predict-page" class="back-btn">Go to News Analyzer →</a>
+
+</div>
+
+</body>
+</html>

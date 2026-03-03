@@ -1,0 +1,1 @@
+{"accuracy": 0.9811804008908686, "total_data": 44898, "fake_count": 23481, "real_count": 21417, "confusion_matrix": [[4579, 117], [52, 4232]]}

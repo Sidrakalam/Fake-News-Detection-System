@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    color: white;
+}
+
+/* LOGIN PAGE */
+
+.admin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-card {
+    background: rgba(255,255,255,0.1);
+    padding: 40px;
+    border-radius: 20px;
+    width: 350px;
+    backdrop-filter: blur(15px);
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.login-card h2 {
+    margin-bottom: 25px;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+}
+
+.login-card button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #00c6ff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-card button:hover {
+    background: #0072ff;
+}
+
+.error {
+    margin-top: 10px;
+    color: #ff4b5c;
+}
+
+.back-home {
+    display: block;
+    margin-top: 20px;
+    color: #ddd;
+    text-decoration: none;
+}
+
+/* DASHBOARD PAGE */
+
+.admin-navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: rgba(0,0,0,0.4);
+}
+
+.admin-navbar a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.logout-btn {
+    color: #ff4b5c;
+}
+
+.admin-dashboard {
+    padding: 40px;
+}
+
+.table-container {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background: rgba(255,255,255,0.2);
+}
+
+tr:nth-child(even) {
+    background: rgba(255,255,255,0.05);
+}
+
+.fake {
+    color: #ff4b5c;
+    font-weight: bold;
+}
+
+.real {
+    color: #00ff99;
+    font-weight: bold;
+}
+
+
+/* ---------------- GLOBAL ---------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+}
+
+/* ---------------- NAVBAR ---------------- */
+.admin-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 50px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+}
+
+.admin-navbar h2 {
+    font-weight: 600;
+}
+
+.admin-navbar a {
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.admin-navbar a:hover {
+    color: #00c6ff;
+}
+
+.logout-btn {
+    color: #ff4b5c;
+}
+
+/* ---------------- MAIN DASHBOARD ---------------- */
+.admin-dashboard {
+    padding: 40px 60px;
+}
+
+/* ---------------- STATS CARDS ---------------- */
+.stats-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    flex: 1;
+    min-width: 220px;
+    padding: 25px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card h4 {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.stat-card p {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.fake-card {
+    border-left: 5px solid #ff4b5c;
+}
+
+.real-card {
+    border-left: 5px solid #00ff99;
+}
+
+/* ---------------- CHART SECTION ---------------- */
+.chart-wrapper {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.chart-container {
+    flex: 1;
+    min-width: 350px;
+    max-width: 500px;
+    background: rgba(255,255,255,0.1);
+    padding: 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+canvas {
+    width: 100% !important;
+    height: 300px !important;
+}
+
+/* ---------------- TABLE ---------------- */
+.table-container {
+    margin-top: 20px;
+    background: rgba(255,255,255,0.08);
+    padding: 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 14px;
+    text-align: left;
+}
+
+th {
+    background: rgba(255,255,255,0.2);
+}
+
+tr:nth-child(even) {
+    background: rgba(255,255,255,0.05);
+}
+
+.fake {
+    color: #ff4b5c;
+    font-weight: bold;
+}
+
+.real {
+    color: #00ff99;
+    font-weight: bold;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media(max-width: 900px) {
+    .chart-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stats-cards {
+        flex-direction: column;
+    }
+}

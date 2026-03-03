@@ -1,0 +1,188 @@
+/* ---------------- GLOBAL ---------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+}
+
+/* ---------------- NAVBAR ---------------- */
+.admin-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.admin-navbar h2 {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.admin-navbar a {
+    text-decoration: none;
+    color: #ffffff;
+    margin-left: 25px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.admin-navbar a:hover {
+    color: #00e6ff;
+}
+
+.logout-btn {
+    color: #ff5f6d;
+}
+
+/* ---------------- MAIN SECTION ---------------- */
+.admin-dashboard {
+    padding: 50px 70px;
+}
+
+/* ---------------- STAT CARDS ---------------- */
+.stats-cards {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    flex: 1;
+    min-width: 250px;
+    padding: 30px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+}
+
+.stat-card h4 {
+    font-weight: 500;
+    margin-bottom: 12px;
+    opacity: 0.85;
+}
+
+.stat-card p {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.fake-card {
+    border-left: 5px solid #ff5f6d;
+}
+
+.real-card {
+    border-left: 5px solid #00ffcc;
+}
+
+/* ---------------- CHART SECTION ---------------- */
+.chart-wrapper {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.chart-container {
+    flex: 1;
+    min-width: 400px;
+    max-width: 550px;
+    padding: 30px;
+    border-radius: 25px;
+
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+}
+
+canvas {
+    width: 100% !important;
+    height: 350px !important;
+}
+
+/* ---------------- TABLE SECTION ---------------- */
+.table-container {
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 25px;
+
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 16px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+td {
+    padding: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+tr:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+.fake {
+    color: #ff5f6d;
+    font-weight: 600;
+}
+
+.real {
+    color: #00ffcc;
+    font-weight: 600;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media(max-width: 1000px) {
+    .chart-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stats-cards {
+        flex-direction: column;
+    }
+}

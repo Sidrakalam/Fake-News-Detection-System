@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin_dashboard.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<nav class="admin-navbar">
+    <h2>🛠 Admin Dashboard</h2>
+    <div>
+        <a href="/">Home</a>
+        <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+</nav>
+
+<div class="admin-dashboard">
+
+    <h3>📊 Prediction Analytics</h3>
+
+    <!-- STAT CARDS -->
+    <div class="stats-cards">
+        <div class="stat-card">
+            <h4>Total Predictions</h4>
+            <p>{{ total }}</p>
+        </div>
+
+        <div class="stat-card fake-card">
+            <h4>Fake Detected</h4>
+            <p>{{ fake_count }}</p>
+        </div>
+
+        <div class="stat-card real-card">
+            <h4>Real Detected</h4>
+            <p>{{ real_count }}</p>
+        </div>
+    </div>
+
+    <!-- CHARTS -->
+    <div class="chart-wrapper">
+    <div class="chart-container">
+        <canvas id="pieChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="barChart"></canvas>
+    </div>
+</div>
+    <h3>📋 Prediction Records</h3>
+
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>News</th>
+                <th>Prediction</th>
+                <th>Confidence</th>
+                <th>Date</th>
+            </tr>
+
+            {% for row in history %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1][:60] }}...</td>
+                <td class="{% if 'Fake' in row[2] %}fake{% else %}real{% endif %}">
+                    {{ row[2] }}
+                </td>
+                <td>{{ row[3] }}%</td>
+                <td>{{ row[4] }}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+
+</div>
+
+<script>
+const fakeCount = {{ fake_count }};
+const realCount = {{ real_count }};
+
+// PIE CHART
+new Chart(document.getElementById('pieChart'), {
+    type: 'pie',
+    data: {
+        labels: ['Fake News', 'Real News'],
+        datasets: [{
+            data: [fakeCount, realCount],
+            backgroundColor: ['#ff4b5c', '#00ff99']
+        }]
+    }
+});
+
+// BAR CHART
+new Chart(document.getElementById('barChart'), {
+    type: 'bar',
+    data: {
+        labels: ['Fake', 'Real'],
+        datasets: [{
+            label: 'Prediction Count',
+            data: [fakeCount, realCount],
+            backgroundColor: ['#ff4b5c', '#00ff99']
+        }]
+    }
+});
+</script>
+
+</body>
+</html>

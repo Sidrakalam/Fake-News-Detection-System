@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fake News Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo">📰 Fake News Detector</div>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/predict-page">News Analyzer</a></li>
+    </ul>
+</nav>
+<div class="background"></div>
+
+<div class="main-container">
+
+    <div class="glass-card">
+
+        <h1>📰 Fake News Detection</h1>
+        <p class="subtitle">AI Powered News Verification System</p>
+
+        <form action="/predict" method="post">
+            <textarea name="news" placeholder="Paste or type news content here..." required></textarea>
+            <button type="submit">Analyze News</button>
+        </form>
+
+        {% if prediction_text %}
+        <div class="result {{ prediction_class }}">
+            {{ prediction_text }}
+        </div>
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+</html>
